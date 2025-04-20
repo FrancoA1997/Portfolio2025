@@ -1,0 +1,17 @@
+@import '../../abstracts/variables';
+
+.customTooltip{
+  background-color: $border-color;
+  backdrop-filter: blur(50px);
+  padding: .5em 1em;
+  border-radius: 5px;
+  border: 1px solid $primary-text;
+  color: yellow;  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  font-size: .9em;
+  font-weight: 100;
+}

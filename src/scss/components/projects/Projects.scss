@@ -1,0 +1,175 @@
+@import "../../abstracts/variables";
+
+.projects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    h2 {
+      font-size: 3em;
+      font-family: $font-mont;
+      color: $primary-text;
+      text-transform: uppercase;
+    }
+  }
+  &__content {
+    margin-top: 1em;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+    background-image: url("/bg-patter-1.png");
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  &__item {
+    width: calc(50% - 2em);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: $surface -1px 1.5px 0.5px 1px;
+    }
+    &-info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      margin-top: 0.5em;
+      .badges {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin-top: 0.5em;
+        flex-wrap: wrap;
+        .badge {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: fit-content;
+          height: 30px;
+          border: 1px solid $border-color;
+          background-color: transparent;
+          backdrop-filter: blur(0.8px);
+          border-radius: 5px;
+          padding: 0 0.5em;
+          gap: 1em;
+          box-shadow: $surface -1px 1.5px 0.5px 1px;
+          &-text {
+            font-size: 1em;
+            text-transform: uppercase;
+            font-family: $font-mont;
+            font-weight: 600;
+            color: $primary-text;
+            letter-spacing: 1px;
+          }
+          &-icon {
+            color: $accent-color;
+            scale: 1.2;
+          }
+        }
+      }
+      .title {
+        width: 100%;
+        height: fit-content;
+        h3 {
+          color: $primary-text;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 2.5em;
+        }
+      }
+      .description {
+        width: 100%;
+        height: fit-content;
+        p {
+          font-family: 1.5em;
+          color: $secondary-text;
+          line-height: 1.5;
+          letter-spacing: 1px;
+        }
+      }
+      .disabled {
+        --disabledShadowColor: yellow -1px 1.5px 0.5px 1px;
+        --disabledColor: rgb(71, 71, 71);
+      }
+      .links {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1em;
+        &-item {
+          width: fit-content !important;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: fit-content;
+          height: 30px;
+          border: 1px solid $border-color;
+          background-color: transparent;
+          backdrop-filter: blur(0.8px);
+          border-radius: 5px;
+          padding: 0 0.5em;
+          gap: 1em;
+          box-shadow: $surface -1px 1.5px 0.5px 1px;
+          transition: all 0.3s ease-in;
+          cursor: pointer;
+          @media (hover: hover) {
+            &:hover {
+              box-shadow: var(
+                --disabledShadowColor,
+                $accent-color -1px 1.5px 0.5px 1px
+              );
+              p {
+                color: var(--disabledColor, $primary-text);
+              }
+              svg {
+                color: var(--disabledColor, $primary-text);
+              }
+            }
+          }
+          &-text {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-family: $font-mont;
+            font-weight: 600;
+            color: $primary-text;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in;
+          }
+          &-icon {
+            color: $accent-color;
+            scale: 1.2;
+            transition: all 0.3s ease-in;
+          }
+        }
+      }
+    }
+  }
+}
