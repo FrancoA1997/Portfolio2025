@@ -1,203 +1,251 @@
+/* eslint-disable no-unused-vars */
 /* ------------------------------Imports---------------------------- */
 //Styles
 import "../../scss/components/projects/Projects.scss";
 //Components
-import { AspectRatio} from "radix-ui";
-import CustomToolTip from "../ui/ToolTip";
+import { AspectRatio } from "radix-ui";
+// import CustomToolTip from "../ui/ToolTip";
 //Icons
-import {
-  DimensionsIcon,
-  CodeIcon,
-  MixerVerticalIcon,
-  Link1Icon,
-  GitHubLogoIcon,
-  RocketIcon
-} from "@radix-ui/react-icons";
+
 //Props
 //React
 //Images
 import thumbnailTest from "/images/thumbnail-test.png";
-import { Link } from "react-router-dom";
+import { PlusIcon } from "@radix-ui/react-icons";
+import destinyLogo from "/logoDestiny.webp";
+import ProjectBadge from "../ui/TechBadge.jsx";
+import { useTheme } from "../../utils/theme.context.jsx";
 //NextJs
 /*---------------------------------------------------------------------- */
 
-const Projects = () => {
+const Projects = ({ setOpenModal }) => {
+  const { theme } = useTheme();
   return (
-    <section className="projects">
-      <div className="projects__container">
+    <section className={`projects light ${theme}`}>
+     
+      <div className="projects__container ">
         <h2>Projects & Experience</h2>
-        <div className="projects__content">
+        <div className="projects__content blue">
+          <div className="title">
+            <h3>Freelance web development projects</h3>
+          </div>
+
           <div className="projects__item">
             <AspectRatio.Root ratio={16 / 9}>
               <img src={thumbnailTest} alt="" />
             </AspectRatio.Root>
             <div className="projects__item-info">
+              <div className="project_title">
+                <h4>DestinyTI Website</h4>
+              </div>
               <div className="badges">
-                <div className="badge">
-                  <p className="badge-text">Design</p>
-                  <DimensionsIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">frontend-Development</p>
-                  <CodeIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Api implementation</p>
-                  <Link1Icon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Optimization</p>
-                  <MixerVerticalIcon className="badge-icon" />
+                <ProjectBadge type={"design"} />
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
+              </div>
+
+              <div className="links  ">
+                <div className="links-item">
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
               </div>
-              <div className="title">
-                <h3>DestinyTI Website</h3>
+            </div>
+          </div>
+          <div className="projects__item">
+            <AspectRatio.Root ratio={16 / 9}>
+              <img src={thumbnailTest} alt="" />
+            </AspectRatio.Root>
+            <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Lexlogos Website</h4>
               </div>
-              <div className="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eum amet corporis, ea suscipit blanditiis quae aliquam id perferendis quasi dolorem harum laboriosam, porro ipsa minima numquam placeat totam sed, sit quia iste. Eaque natus culpa sapiente ab, explicabo velit.</p>
+              <div className="badges">
+                <ProjectBadge type={"design"} />
+                <ProjectBadge type={"fullstack"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"next"} />
+                <ProjectBadge type={"prisma"} />
+                <ProjectBadge type={"mongo"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
               </div>
               <div className="links  ">
-                <CustomToolTip content={'Source not available: this is a private client repository.'}>
-                <div className="links-item disabled">
-                      <p className="links-item-text">Code</p>
-                      <GitHubLogoIcon className="links-item-icon"/>
-                  </div>
-                </CustomToolTip>
-                <div className="links-item">
-                    <p className="links-item-text">Deploy</p>
-                    <RocketIcon className="links-item-icon"/>
+                <div onClick={() => setOpenModal(true)} className="links-item">
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
               </div>
             </div>
           </div>
-          <div  className="projects__item">
+          <div className="projects__item">
             <AspectRatio.Root ratio={16 / 9}>
               <img src={thumbnailTest} alt="" />
             </AspectRatio.Root>
             <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Frutales Website</h4>
+              </div>
               <div className="badges">
-                <div className="badge">
-                  <p className="badge-text">Design</p>
-                  <DimensionsIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">frontend-Development</p>
-                  <CodeIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Api implementation</p>
-                  <Link1Icon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Optimization</p>
-                  <MixerVerticalIcon className="badge-icon" />
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
+              </div>
+              <div className="links">
+                <div className="links-item">
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
               </div>
-              <div className="title">
-                <h3>Lexlogos Website</h3>
+            </div>
+          </div>
+          <div className="projects__item">
+            <AspectRatio.Root ratio={16 / 9}>
+              <img src={thumbnailTest} alt="" />
+            </AspectRatio.Root>
+            <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Solmedicam Website</h4>
               </div>
-              <div className="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eum amet corporis, ea suscipit blanditiis quae aliquam id perferendis quasi dolorem harum laboriosam, porro ipsa minima numquam placeat totam sed, sit quia iste. Eaque natus culpa sapiente ab, explicabo velit.</p>
+              <div className="badges">
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
+              </div>
+
+              <div className="links">
+                <div className="links-item">
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="projects__content black">
+          <div className="title">
+            <h3>
+              Freelance templates developed for Destiny
+              <img src={destinyLogo} alt="destiny_logo" />
+            </h3>
+          </div>
+
+          <div className="projects__item">
+            <AspectRatio.Root ratio={16 / 9}>
+              <img src={thumbnailTest} alt="" />
+            </AspectRatio.Root>
+            <div className="projects__item-info">
+              <div className="project_title">
+                <h4>DestinyTI Website</h4>
+              </div>
+              <div className="badges">
+                <ProjectBadge type={"design"} />
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
+              </div>
+
+              <div className="links  ">
+                <div className="links-item">
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="projects__item">
+            <AspectRatio.Root ratio={16 / 9}>
+              <img src={thumbnailTest} alt="" />
+            </AspectRatio.Root>
+            <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Lexlogos Website</h4>
+              </div>
+              <div className="badges">
+                <ProjectBadge type={"design"} />
+                <ProjectBadge type={"fullstack"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"next"} />
+                <ProjectBadge type={"prisma"} />
+                <ProjectBadge type={"mongo"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
               </div>
               <div className="links  ">
-                <CustomToolTip content={'Source not available: this is a private client repository.'}>
-                <div className="links-item disabled">
-                      <p className="links-item-text">Code</p>
-                      <GitHubLogoIcon className="links-item-icon"/>
-                  </div>
-                </CustomToolTip>
                 <div className="links-item">
-                    <p className="links-item-text">Deploy</p>
-                    <RocketIcon className="links-item-icon"/>
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
               </div>
             </div>
           </div>
-          <div  className="projects__item">
+          <div className="projects__item">
             <AspectRatio.Root ratio={16 / 9}>
               <img src={thumbnailTest} alt="" />
             </AspectRatio.Root>
             <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Frutales Website</h4>
+              </div>
               <div className="badges">
-                <div className="badge">
-                  <p className="badge-text">Design</p>
-                  <DimensionsIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">frontend-Development</p>
-                  <CodeIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Api implementation</p>
-                  <Link1Icon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Optimization</p>
-                  <MixerVerticalIcon className="badge-icon" />
-                </div>
-              </div>
-              <div className="title">
-                <h3>Frutales Website</h3>
-              </div>
-              <div className="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eum amet corporis, ea suscipit blanditiis quae aliquam id perferendis quasi dolorem harum laboriosam, porro ipsa minima numquam placeat totam sed, sit quia iste. Eaque natus culpa sapiente ab, explicabo velit.</p>
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
               </div>
               <div className="links">
-                <CustomToolTip content={'Source not available: this is a private client repository.'}>
-                <div className="links-item disabled">
-                      <p className="links-item-text">Code</p>
-                      <GitHubLogoIcon className="links-item-icon"/>
-                  </div>
-                </CustomToolTip>
                 <div className="links-item">
-                    <p className="links-item-text">Deploy</p>
-                    <RocketIcon className="links-item-icon"/>
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
-                
               </div>
             </div>
           </div>
-          <div  className="projects__item">
+          <div className="projects__item">
             <AspectRatio.Root ratio={16 / 9}>
               <img src={thumbnailTest} alt="" />
             </AspectRatio.Root>
             <div className="projects__item-info">
+              <div className="project_title">
+                <h4>Solmedicam Website</h4>
+              </div>
               <div className="badges">
-                <div className="badge">
-                  <p className="badge-text">Design</p>
-                  <DimensionsIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">frontend-Development</p>
-                  <CodeIcon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Api implementation</p>
-                  <Link1Icon className="badge-icon" />
-                </div>
-                <div className="badge">
-                  <p className="badge-text">Optimization</p>
-                  <MixerVerticalIcon className="badge-icon" />
-                </div>
+                <ProjectBadge type={"frontend"} />
+                <ProjectBadge type={"api"} />
+                <ProjectBadge type={"optimization"} />
+                <ProjectBadge type={"react"} />
+                <ProjectBadge type={"vite"} />
+                <ProjectBadge type={"sass"} />
+                <ProjectBadge type={"material"} />
               </div>
-              <div className="title">
-                <h3>Solmedicam Website</h3>
-              </div>
-              <div className="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eum amet corporis, ea suscipit blanditiis quae aliquam id perferendis quasi dolorem harum laboriosam, porro ipsa minima numquam placeat totam sed, sit quia iste. Eaque natus culpa sapiente ab, explicabo velit.</p>
-              </div>
+
               <div className="links">
-                <CustomToolTip content={'Source not available: this is a private client repository.'}>
-                <div className="links-item disabled">
-                      <p className="links-item-text">Code</p>
-                      <GitHubLogoIcon className="links-item-icon"/>
-                  </div>
-                </CustomToolTip>
                 <div className="links-item">
-                    <p className="links-item-text">Deploy</p>
-                    <RocketIcon className="links-item-icon"/>
+                  <p className="links-item-text">Info</p>
+                  <PlusIcon className="links-item-icon" />
                 </div>
-                
               </div>
             </div>
           </div>

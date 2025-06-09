@@ -1,0 +1,82 @@
+@use '../../abstracts/variables';
+
+
+        .non-tech-badge {
+          background-color: var(--project-badge-color);
+          p {
+            color: var(--project-badge-text);
+          }
+        }
+        .material,
+        .react,
+        .mongo,
+        .node,
+        .next,
+        .typescript,
+        .javascript,
+        .prisma,
+        .sass,
+        .vite,
+        .figma {
+          p {
+            color: white;
+          }
+        }
+        .react {
+          background-color: #0e39a9;
+        }
+        .mongo {
+          background-color: #47a248;
+        }
+          .figma {
+          background-color: orangered;
+        }
+
+        .next {
+          background-color: #000000;
+        }
+        .typescript {
+          color: #3178c6;
+        }
+        .javascript {
+          background-color: #f7df1e;
+        }
+        .material {
+          background-color: #007fff;
+        }
+        .prisma {
+          background-color: #2d3748;
+        }
+        .sass {
+          background-color: #cc6699;
+        }
+        .vite {
+          background-color: #646cff;
+        }
+
+        .badge {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: fit-content;
+          height: 30px;
+          color: var(--primary-text);
+          border-radius: 5px;
+          padding: 0 0.5em;
+          gap: 1em;
+          box-shadow: var(--background-primary) -1px 2px 4px 1px;
+          border: 1px solid var(--border-color-halftone);
+          &-text {
+            font-size: 1em;
+            text-transform: uppercase;
+
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+          &-icon {
+            color: var(--accent-color);
+            scale: 1.2;
+          }
+        }
+      

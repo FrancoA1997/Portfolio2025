@@ -1,0 +1,166 @@
+@import "../../abstracts/variables";
+
+.worldMap {
+  width: 50%;
+  height: auto;
+  position: relative;
+  &__container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    transition: all .3s ease-in;
+    cursor: pointer;
+      transform-style: preserve-3d;
+    .hover{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      z-index: 999;
+        &::after{
+            transition: all .3s ease-in;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(
+          150deg,
+          var(--primary-color) 45%,
+          var(--secondary-color) 55%
+        );
+          background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            text-decoration: double;
+            font-size: 2em;
+            font-weight: 600;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            content: attr(data-text);
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(5px);
+           z-index: 999;
+          }
+      @media(hover:hover){
+        &:hover{
+         &::after{
+          opacity: 1;
+         }
+        
+        }
+  
+      }
+    }
+    .glow {
+      position: absolute;
+      bottom: -1em;
+      right: -1em;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+
+     
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.02) 60%,
+        rgba(255, 255, 255, .001) 100%
+      );
+      z-index: 15;
+    }
+    &::after {
+      content: ""; // Obligatorio para que se muestre el pseudo-elemento
+      position: absolute;
+      top: 0;
+      left: -25px;
+      width: 110%;
+      height: 110%;
+      border-radius: inherit; // Hereda el border-radius del contenedor
+
+      // APLICA la sombra AQUÍ
+      box-shadow: inset 15px 15px 25px -10px rgba(0, 0, 0, 1); // Puedes usar rgba para controlar transparencia
+
+      // z-index MÁS ALTO que el de los hijos (.frontface tiene z-index: 5)
+      z-index: 10;
+
+      // Importante: Evita que la sombra bloquee eventos del ratón si fuera necesario
+      pointer-events: none;
+    }
+ 
+    .backface {
+      position: absolute;
+      top: -170px;
+      left: -1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      rotate: 8deg;
+      animation: backface 15s 0.5s linear forwards infinite;
+      z-index: 5;
+      img {
+        width: 160%;
+        height: 160%;
+        transform: scaleX(-1);
+        object-fit: none;
+        rotate: 0deg;
+        opacity: 0.4;
+        filter: blur(2px);
+      }
+    }
+    .frontface {
+      position: absolute;
+      top: 80px;
+      right: -500px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      rotate: 8deg;
+      animation: frontface 15s linear forwards infinite;
+      z-index: 7;
+      opacity: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: none;
+      }
+    }
+  }
+}
+@keyframes frontface {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, -0%);
+  }
+}
+@keyframes backface {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(150%, 0%);
+  }
+}
+ @keyframes rotate {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -1200px 0;
+      }
+    }

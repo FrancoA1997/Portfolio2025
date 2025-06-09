@@ -1,22 +1,33 @@
 /* ------------------------------Imports---------------------------- */
 //Styles
 import '../../scss/components/home/homeHeader.scss';
+import { useTheme } from '../../utils/theme.context.jsx';
 //Components
+import WorldMap from '../ui/WorldMap';
 //Icons
 import { GitHubLogoIcon, LinkedInLogoIcon, DownloadIcon, EyeOpenIcon, DimensionsIcon, LayersIcon } from "@radix-ui/react-icons"
-import gif from '/images/homeHeaderAnimation.gif';
+
+
 //Props
 //React
 //Images
 //NextJs
 /*---------------------------------------------------------------------- */
 const HomeHeader = () => {
+  const {theme} = useTheme();
   return (
-    <header className="homeHeader">
+    <header className={`homeHeader ${theme}`}>
+  
       <div className='homeHeader__container'>
+        {theme === 'light' ? (
+          <div key={'light'} className="background-light"/>
+        ) : (
+          <div key={'dark'} className="background-dark"/>
+        )}
+        <div className='info'>
         <div className="title">
         <h1>Franco Alvarez </h1>
-        <h2><LayersIcon id='icon'/>Full stack web developer,<DimensionsIcon id='icon-frontend'/> Frontend Focused </h2>
+        <h2><LayersIcon id='icon'/>Full stack web developer |<DimensionsIcon id='icon-frontend'/><strong> Frontend Focused </strong></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, doloribus, quia libero voluptate deserunt ea corrupti esse nobis, provident perferendis alias laboriosam quis? Deleniti quaerat, dignissimos harum magni eveniet dolorum excepturi, aperiam, quasi nemo ut dolor sequi. Exercitationem ea inventore fuga commodi.</p>
         </div>
         <div className="socials">
@@ -33,8 +44,14 @@ const HomeHeader = () => {
                 <button>See projects <EyeOpenIcon/></button>
             </div>
         </div>
-      
+        </div>
+        <div className='map'>
+      <WorldMap/>
+
+        <p className='switch-theme'>hover to Switch theme</p>
+        </div>
       </div>
+     
     </header>
   )
 }

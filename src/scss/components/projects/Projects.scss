@@ -1,42 +1,76 @@
-@import "../../abstracts/variables";
+@use "../../abstracts/variables";
 
 .projects {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: $background;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background-color: var(--background-primary);
+  z-index: 10;
+  transition: all 0.7s ease-in;
   &__container {
     max-width: 1440px;
     width: 100%;
     height: 100%;
     h2 {
       font-size: 3em;
-      font-family: $font-mont;
-      color: $primary-text;
+      color: var(--text-primary);
       text-transform: uppercase;
+      transition: all 0.7s ease-in;
     }
   }
+
   &__content {
     margin-top: 1em;
     width: 100%;
     height: 100%;
-    background-color: $primary-color;
-    background-image: url("/bg-patter-1.png");
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 2em;
+    margin-bottom: 5em;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 8em 2em 2em 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    background-color: transparent;
     gap: 2em;
+    position: relative;
+    box-shadow: var(--background-reversed) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    z-index: 10;
+    transition: all 0.7s ease-in;
+    background-color: var(--project-bg-2);
+    background-image: url("/bg-patter-6.png");
+    background-blend-mode: var(--blend-mode);
+    .title {
+      position: absolute;
+      top: 2em;
+      width: 95.5%;
+      h3 {
+        color: var(--project-title-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 2.5em;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1em;
+        transition: all 0.7s ease-in;
+        img {
+          max-width: 70px;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
   }
   &__item {
-    width: calc(50% - 2em);
+    width: calc(50% - 1em);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -46,15 +80,17 @@
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: $surface -1px 1.5px 0.5px 1px;
+      box-shadow: var(--project-title-color) -5px 3px 5px -4px;
+      border: 1px solid var(--project-title-color);
     }
     &-info {
       width: 100%;
-      height: 100%;
+      height: 270px;
       display: flex;
       flex-direction: column;
-      gap: 2em;
+      gap: 0.5em;
       margin-top: 0.5em;
+
       .badges {
         width: 100%;
         height: fit-content;
@@ -63,54 +99,20 @@
         gap: 1em;
         margin-top: 0.5em;
         flex-wrap: wrap;
-        .badge {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: fit-content;
-          height: 30px;
-          border: 1px solid $border-color;
-          background-color: transparent;
-          backdrop-filter: blur(0.8px);
-          border-radius: 5px;
-          padding: 0 0.5em;
-          gap: 1em;
-          box-shadow: $surface -1px 1.5px 0.5px 1px;
-          &-text {
-            font-size: 1em;
-            text-transform: uppercase;
-            font-family: $font-mont;
-            font-weight: 600;
-            color: $primary-text;
-            letter-spacing: 1px;
-          }
-          &-icon {
-            color: $accent-color;
-            scale: 1.2;
-          }
-        }
       }
-      .title {
+
+      .project_title {
         width: 100%;
         height: fit-content;
-        h3 {
-          color: $primary-text;
+        h4 {
+          color: var(--project-title-color);
           text-transform: uppercase;
           letter-spacing: 1px;
           font-size: 2.5em;
+          font-weight: 500;
         }
       }
-      .description {
-        width: 100%;
-        height: fit-content;
-        p {
-          font-family: 1.5em;
-          color: $secondary-text;
-          line-height: 1.5;
-          letter-spacing: 1px;
-        }
-      }
+
       .disabled {
         --disabledShadowColor: yellow -1px 1.5px 0.5px 1px;
         --disabledColor: rgb(71, 71, 71);
@@ -123,6 +125,8 @@
         align-items: center;
         justify-content: flex-end;
         gap: 1em;
+        margin-top: auto;
+  
         &-item {
           width: fit-content !important;
           display: flex;
@@ -131,40 +135,32 @@
           justify-content: center;
           width: fit-content;
           height: 30px;
-          border: 1px solid $border-color;
-          background-color: transparent;
+          background-color: var(--project-button-color);
           backdrop-filter: blur(0.8px);
           border-radius: 5px;
           padding: 0 0.5em;
           gap: 1em;
-          box-shadow: $surface -1px 1.5px 0.5px 1px;
+          box-shadow: var(--border-color) -1px 1.5px 0.5px 1px;
           transition: all 0.3s ease-in;
           cursor: pointer;
           @media (hover: hover) {
             &:hover {
               box-shadow: var(
                 --disabledShadowColor,
-                $accent-color -1px 1.5px 0.5px 1px
+                var(--accent-color) -1px 1.5px 0.5px 1px
               );
-              p {
-                color: var(--disabledColor, $primary-text);
-              }
-              svg {
-                color: var(--disabledColor, $primary-text);
-              }
             }
           }
           &-text {
             font-size: 16px;
             text-transform: uppercase;
-            font-family: $font-mont;
             font-weight: 600;
-            color: $primary-text;
+            color: var(--button-text);
             letter-spacing: 1px;
             transition: all 0.3s ease-in;
           }
           &-icon {
-            color: $accent-color;
+            color: var(--accent-color);
             scale: 1.2;
             transition: all 0.3s ease-in;
           }

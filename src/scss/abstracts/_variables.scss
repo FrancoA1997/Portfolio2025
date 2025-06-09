@@ -1,14 +1,118 @@
-//Colors
-$primary-color: #1E40AF ;
-$secondary-color: #6366F1 ;
-$accent-color: #14B8A6 ;
-$error-color: #EF4444;
-$primary-text: #E2E8F0;
-$secondary-text: #94A3B8 ;
-$background: #0b0f19;
-$border-color: #1E293B;
-$surface: #111827;
-$font-mont: "IBM Plex Mono", monospace;
+:root {
+  --error-color: #ef4444;
+  --font-mont: "IBM Plex Mono", monospace;
+  /* Fondo y Neutros */
+  --color-neutral-000: #f8f9faff; /* Seasalt - Muy claro, ideal para fondo principal */
+  --color-neutral-100: #e9ecefff; /* Antiflash White - Ligeramente más oscuro, para elementos claros secundarios */
+  --color-neutral-200: #dee2e6ff; /* Platinum - Gris muy claro */
+  --color-neutral-300: #ced4daff; /* French Gray - Gris claro */
+  --color-neutral-400: #adb5bdff; /* French Gray 2 - Gris medio claro */
+  --color-neutral-500: #6c757dff; /* Slate Gray - Gris medio, buen contraste para texto ligero */
+  --color-neutral-600: #495057ff; /* Outer Space - Gris oscuro, para texto o elementos oscuros */
+  --color-neutral-700: #343a40ff; /* Onyx - Gris muy oscuro, casi negro */
+  --color-neutral-800: #212529ff; /* Eerie Black - El más oscuro, ideal para texto principal o fondo oscuro */
+
+  --color-brand-900: #012a4aff; /* Prussian Blue - El más oscuro, ideal para texto sobre fondos claros, footer oscuro */
+  --color-brand-800: #013a63ff; /* Indigo Dye */
+  --color-brand-700: #01497cff; /* Indigo Dye 2 */
+  --color-brand-600: #014f86ff; /* Indigo Dye 3 - Buen azul primario para botones, links */
+  --color-brand-500: #2a6f97ff; /* UCLA Blue - Un azul central, balanceado */
+  --color-brand-400: #2c7da0ff; /* Cerulean */
+  --color-brand-300: #468fafff; /* Air Force Blue */
+  --color-brand-200: #61a5c2ff; /* Air Superiority Blue - Azul más claro para fondos sutiles o acentos */
+  --color-brand-100: #eaf8ff; /* Sky Blue - Azul muy claro, para fondos de secciones o tarjetas */
+  --color-brand-50: #effbff; /* Light Blue - El más claro, para fondos casi blancos */
+}
+
+.light {
+  --background-primary: var(--color-neutral-000);
+  --background-secondary: var(--color-neutral-300);
+  --text-primary: var(--color-neutral-800);
+  --text-secondary: var(--color-neutral-700);
+  --button-color: var(--color-neutral-600);
+  --button-text: var(--color-neutral-100);
+   --border-color-halftone: rgba(173, 181, 189, 0.7);
+  --border-color: var(--color-neutral-400);
+  --hover-button-color: var(--color-neutral-200);
+  --accent-color: #14b8a6;
+  --project-title-color: var(--color-neutral-000);
+  --project-badge-text: var(--color-neutral-000);
+  --project-badge-color: var(--color-brand-900);
+  --project-button-color: var(--color-brand-900);
+  --project-bg-1: var(--color-neutral-900);
+  --project-bg-2: var(--color-brand-700);
+  --background-primary-reversed: var(--color-brand-900);
+  --background-secondary-reversed: var(--color-brand-700);
+  --blend-mode: color-burn;
+  // --border-color: rgba(0, 0, 0, 0.3);
+  // --surface: black;
+  // --primary-color: #1e40af;
+  // --secondary-color: #4338ca;
+  // --accent-color: #0d9488;
+  // --primary-text: black;
+  // --secondary-text: #334155;
+  // --background: #ffffff;
+  // --second-background: #d0d0d0;
+  // --button-text: white;
+  // --project-bg-1: #e0e7ff;
+  // --project-bg-2: #e6d2fe;
+  // --primary-text-reversed: white;
+  // --secondary-text-reversed: rgb(187, 224, 247);
+  // --second-background-reversed: #1b1b1b;
+  // --background-reversed: #000000;
+  // --brightness: 1;
+  // --dots-opacity: 0.95;
+  // --dots-blur: 2px;
+  // --background-halftone: rgba(255, 255, 255, 0.5);
+  // --background-halftone-reversed: rgba(0, 0, 0, 0.5);
+  // --border-half-tone: rgba(0, 0, 0, 0.5);
+  // --border-half-tone-reversed: rgba(255, 255, 255, 0.5);
+}
+
+.dark {
+  --background-primary: var(--color-brand-900);
+  --background-secondary: var(--color-brand-700);
+  --text-primary: var(--color-brand-50);
+  --text-secondary: var(--color-brand-100);
+  --button-color: var(--color-brand-600);
+  --hover-button-color: var(--color-brand-700);
+  --button-text: var(--color-brand-50);
+  --border-color: var(--color-brand-200);
+    --border-color-halftone: rgba(97, 165, 194, 0.3);
+  --accent-color: #14b8a6;
+  --project-title-color: var(--color-brand-600);
+  --project-badge-color: var(--color-brand-500);
+  --project-badge-text: var(--color-brand-50);
+  --project-button-color: var(--color-brand-600);
+  --project-bg-1: var(--color-brand-200);
+  --project-bg-2: var(--color-brand-50);
+  --background-primary-reversed: var(--color-neutral-000);
+  --background-secondary-reversed: var(--color-neutral-100);
+  --blend-mode: darken;
+  // --border-color: rgba(255, 255, 255, 0.3);
+  // --surface: white;
+  // --primary-color: #1e40af;
+  // --secondary-color: #6366f1;
+  // --primary-text: white;
+  // --secondary-text: rgb(187, 224, 247);
+  // --background: black;
+  // --second-background: #1b1b1b;
+  // --button-text: black;
+  // --project-bg-1: #1e40af;
+  // --project-bg-2: #6366f1;
+  // --primary-text-reversed: black;
+  // --secondary-text-reversed: #334155;
+  // --second-background-reversed: #d0d0d0;
+  // --background-reversed: #ffffff;
+  // --brightness: 3;
+  // --dots-opacity: 0.35;
+  // --dots-blur: 1px;
+  // --background-halftone: rgba(0, 0, 0, 0.3);
+  // --background-halftone-reversed: rgba(255, 255, 255, 0.5);
+
+  // --border-half-tone: rgba(255, 255, 255, 0.5);
+  // --border-half-tone-reversed: rgba(0, 0, 0, 0.5);
+}
 
 //CUSTOM ANIMATIONS
 @keyframes bounceIn {

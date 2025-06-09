@@ -1,11 +1,11 @@
 @import '../../abstracts/variables';
 
 .customTooltip{
-  background-color: $border-color;
+  background-color: var(--border-color);
   backdrop-filter: blur(50px);
   padding: .5em 1em;
   border-radius: 5px;
-  border: 1px solid $primary-text;
+  border: 1px solid var(--primary-text);
   color: yellow;  
   display: flex;
   flex-direction: row;

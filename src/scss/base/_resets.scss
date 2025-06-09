@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
-  font-family: $font-mont;
+  font-family: var(--font-mont);
 
 }
 
@@ -23,12 +23,12 @@ a {
 
 body {
   margin: 0px!important;
-  background-color: #fafafa;
+
 }
 
 
 button {
   border: none;
   background: none;
-  font-family: $font-mont;
+font-family: var(--font-mont);
 }
