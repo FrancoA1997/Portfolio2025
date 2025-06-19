@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import "../../scss/components/home/home.scss";
 //Components
-
 import HomeHeader from "./HomeHeader";
 import Projects from "./Projects";
 import ProjectModal from "../ui/ProjectModal";
-
 import NavMenu from "../NavMenu";
+import Stack from "./Stack";
 //Icons
 //Props
+import { projects, templates } from "../../data/projects";
 //React
 //Images
 //NextJs
@@ -18,6 +18,8 @@ import NavMenu from "../NavMenu";
 /*---------------------------------------------------------------------- */
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState(0);
+  const [modalArray, setModalArray] = useState(null);
   useEffect(() => {
     if (openModal) {
       document.body.style.overflow = "hidden";
@@ -34,14 +36,25 @@ const Home = () => {
   }, [openModal]);
   return (
     <main className="home">
-
       {openModal && (
-        <ProjectModal key={openModal} setOpenModal={setOpenModal} />
+        <ProjectModal
+          key={openModal}
+          setOpenModal={setOpenModal}
+          projectId={selectedProjectId}
+          modalArray={modalArray}
+        />
       )}
       <NavMenu />
       <article>
         <HomeHeader />
-        <Projects setOpenModal={setOpenModal} />
+        <Projects
+          setOpenModal={setOpenModal}
+          setSelectedProjectId={setSelectedProjectId}
+          setModalArray={setModalArray}
+          projects={projects}
+          templates={templates}
+        />
+        <Stack/>
       </article>
     </main>
   );

@@ -1,82 +1,102 @@
-@use '../../abstracts/variables';
+@use "../../abstracts/variables";
 
+.non-tech-badge {
+  background-color: var(--project-badge-color);
+  box-shadow: var(--border-color-halftone) -1px 2px 5px 1px;
+    transition: all .7s ease;
+     border: 1px solid --project-badge-color;
+  p {
+    color: var(--project-badge-text);
+  }
+}
+.material,
+.react,
+.mongo,
+.node,
+.next,
+.typescript,
+.javascript,
+.prisma,
+.sass,
+.vite,
+.figma {
+  transition: all .7s ease;
+  p {
+    color: white;
+  }
+}
+.react {
+  background-color: #005ca3;
+  box-shadow: rgba(0, 92, 163, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(0, 92, 163, 0.5);
+}
+.mongo {
+  background-color: rgb(71, 162, 72);
+  box-shadow: rgba(71, 162, 72, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(71, 162, 72, 0.5);
+}
+.figma {
+  background-color: rgb(255, 69, 0);
+  box-shadow: rgba(255, 69, 0, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(255, 69, 0, 0.5);
+}
+.next {
+  background-color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.typescript {
+  color: rgb(49, 120, 198);
+  box-shadow: rgba(49, 120, 198, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(49, 120, 198, 0.5);
+}
+.javascript {
+  background-color: rgb(224, 191, 0);
+  box-shadow: rgba(224, 191, 0, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(224, 191, 0, 0.5);
+}
+.material {
+  background-color: rgb(0, 127, 255);
+  box-shadow: rgba(0, 127, 255, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(0, 127, 255, 0.5);
+}
+.prisma {
+  background-color: rgb(45, 55, 72);
+  box-shadow: rgba(45, 55, 72, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(45, 55, 72, 0.5);
+}
+.sass {
+  background-color: rgb(204, 102, 153);
+  box-shadow: rgba(204, 102, 153, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(204, 102, 153, 0.5);
+}
+.vite {
+  background-color: rgb(100, 108, 255);
+  box-shadow: rgba(100, 108, 255, 0.7) -1px 2px 5px 1px;
+  border: 1px solid rgba(100, 108, 255, 0.5);
+}
 
-        .non-tech-badge {
-          background-color: var(--project-badge-color);
-          p {
-            color: var(--project-badge-text);
-          }
-        }
-        .material,
-        .react,
-        .mongo,
-        .node,
-        .next,
-        .typescript,
-        .javascript,
-        .prisma,
-        .sass,
-        .vite,
-        .figma {
-          p {
-            color: white;
-          }
-        }
-        .react {
-          background-color: #0e39a9;
-        }
-        .mongo {
-          background-color: #47a248;
-        }
-          .figma {
-          background-color: orangered;
-        }
+.badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  height: 30px;
+  color: var(--primary-text);
+  border-radius: 5px;
+  padding: 0 0.5em;
+  gap: 1em;
+  
+  &-text {
+    font-size: 1em;
+    text-transform: uppercase;
 
-        .next {
-          background-color: #000000;
-        }
-        .typescript {
-          color: #3178c6;
-        }
-        .javascript {
-          background-color: #f7df1e;
-        }
-        .material {
-          background-color: #007fff;
-        }
-        .prisma {
-          background-color: #2d3748;
-        }
-        .sass {
-          background-color: #cc6699;
-        }
-        .vite {
-          background-color: #646cff;
-        }
-
-        .badge {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: fit-content;
-          height: 30px;
-          color: var(--primary-text);
-          border-radius: 5px;
-          padding: 0 0.5em;
-          gap: 1em;
-          box-shadow: var(--background-primary) -1px 2px 4px 1px;
-          border: 1px solid var(--border-color-halftone);
-          &-text {
-            font-size: 1em;
-            text-transform: uppercase;
-
-            font-weight: 600;
-            letter-spacing: 1px;
-          }
-          &-icon {
-            color: var(--accent-color);
-            scale: 1.2;
-          }
-        }
-      
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  &-icon {
+    color: var(--accent-color);
+    scale: 1.2;
+  }
+}

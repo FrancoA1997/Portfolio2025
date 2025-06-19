@@ -10,6 +10,7 @@ import {
   SiPrisma,
   SiMongodb,
   SiFigma,
+
 } from "@icons-pack/react-simple-icons";
 
 import {
@@ -18,12 +19,30 @@ import {
   MixerVerticalIcon,
   Link1Icon,
   StackIcon,
+  LightningBoltIcon,
+  ReaderIcon,
+  FilePlusIcon
 } from "@radix-ui/react-icons";
 const TechBadge = ({ type }) => {
   const badgeTypes = {
     fullstack: {
       text: "Fullstack Development",
       icon: <StackIcon className="badge-icon" />,
+      style: "non-tech-badge badge",
+    },
+        landing: {
+      text: "Landing page",
+      icon: <ReaderIcon className="badge-icon" />,
+      style: "non-tech-badge badge",
+    },
+       multi: {
+      text: "Multi page",
+      icon: <FilePlusIcon className="badge-icon" />,
+      style: "non-tech-badge badge",
+    },
+       migration: {
+      text: "Site Migration",
+      icon: <MixerVerticalIcon className="badge-icon" />,
       style: "non-tech-badge badge",
     },
     design: {
@@ -36,14 +55,19 @@ const TechBadge = ({ type }) => {
       icon: <CodeIcon className="badge-icon " />,
       style: "non-tech-badge badge",
     },
+        backend: {
+      text: "Backend Development",
+      icon: <CodeIcon className="badge-icon " />,
+      style: "non-tech-badge badge",
+    },
     api: {
       text: "API Implementation",
       icon: <Link1Icon className="badge-icon " />,
       style: "non-tech-badge badge",
     },
     optimization: {
-      text: "Optimization",
-      icon: <MixerVerticalIcon className="badge-icon" />,
+      text: "seo/time Optimization",
+      icon: <LightningBoltIcon className="badge-icon" />,
       style: "non-tech-badge badge",
     },
     react: {
@@ -56,8 +80,8 @@ const TechBadge = ({ type }) => {
       icon: <SiJavascript style={{ color: "white", scale: 0.9 }} />,
       style: "badge javascript",
     },
-    sass: {
-      text: "Sass",
+    scss: {
+      text: "Scss",
       icon: <SiSass style={{ color: "white", scale: 0.9 }} />,
       style: "badge sass",
     },
@@ -98,9 +122,9 @@ const TechBadge = ({ type }) => {
     },
   };
   return (
-    <div className={badgeTypes[type].style}>
-      <p className="badge-text">{badgeTypes[type].text}</p>
-      {badgeTypes[type].icon}
+    <div className={badgeTypes[type]?.style}>
+      <p className="badge-text">{badgeTypes[type]?.text}</p>
+      {badgeTypes[type]?.icon}
     </div>
   );
 };

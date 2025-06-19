@@ -27,7 +27,7 @@ const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isIconTransitioning, setIsIconTransitioning] = useState(false);
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const toggleWidget = () => {
     setIsIconTransitioning(true);
 
@@ -92,10 +92,10 @@ const NavMenu = () => {
             <div className="language-toggle">
               <h3>Choose your language </h3>
               <div className="language-items">
-                <div className="language-item">
+                <div className="language-item" onClick={() => setTheme('light')}>
                   <img src={flagEs} alt="toggle-spanish-image" />
                 </div>
-                <div className="language-item active">
+                <div className="language-item active" onClick={() => setTheme('dark')}>
                   <img src={flagEn} alt="toggle-english-image" />
                 </div>
               </div>

@@ -31,7 +31,7 @@
   --text-secondary: var(--color-neutral-700);
   --button-color: var(--color-neutral-600);
   --button-text: var(--color-neutral-100);
-   --border-color-halftone: rgba(173, 181, 189, 0.7);
+  --border-color-halftone: rgba(173, 181, 189, 0.7);
   --border-color: var(--color-neutral-400);
   --hover-button-color: var(--color-neutral-200);
   --accent-color: #14b8a6;
@@ -41,9 +41,11 @@
   --project-button-color: var(--color-brand-900);
   --project-bg-1: var(--color-neutral-900);
   --project-bg-2: var(--color-brand-700);
-  --background-primary-reversed: var(--color-brand-900);
-  --background-secondary-reversed: var(--color-brand-700);
+  --background-primary-reversed: #1a1b1f;
+  --background-secondary-reversed: #09090a;
   --blend-mode: color-burn;
+  --shadow-home-header-images: black;
+
   // --border-color: rgba(0, 0, 0, 0.3);
   // --surface: black;
   // --primary-color: #1e40af;
@@ -70,25 +72,26 @@
 }
 
 .dark {
-  --background-primary: var(--color-brand-900);
-  --background-secondary: var(--color-brand-700);
+  --background-primary: #1a1b1f;
+  --background-secondary: #09090a;
   --text-primary: var(--color-brand-50);
   --text-secondary: var(--color-brand-100);
   --button-color: var(--color-brand-600);
   --hover-button-color: var(--color-brand-700);
   --button-text: var(--color-brand-50);
-  --border-color: var(--color-brand-200);
-    --border-color-halftone: rgba(97, 165, 194, 0.3);
+  --border-color: rgba(255, 255, 255, 0.153);
+  --border-color-halftone: rgba(255, 255, 255, 0.1);
   --accent-color: #14b8a6;
-  --project-title-color: var(--color-brand-600);
-  --project-badge-color: var(--color-brand-500);
+  --project-title-color: var(--color-brand-50);
+  --project-badge-color: #1a1b1f;
   --project-badge-text: var(--color-brand-50);
-  --project-button-color: var(--color-brand-600);
+  --project-button-color: #1a1b1f;
   --project-bg-1: var(--color-brand-200);
-  --project-bg-2: var(--color-brand-50);
+  --project-bg-2: var(--color-neutral-600);
   --background-primary-reversed: var(--color-neutral-000);
   --background-secondary-reversed: var(--color-neutral-100);
-  --blend-mode: darken;
+  --blend-mode: multiply;
+  --shadow-home-header-images: rgba(255, 255, 255, 0.061);
   // --border-color: rgba(255, 255, 255, 0.3);
   // --surface: white;
   // --primary-color: #1e40af;

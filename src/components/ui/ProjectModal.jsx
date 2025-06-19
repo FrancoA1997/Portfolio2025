@@ -15,13 +15,13 @@ import { RocketIcon } from "@radix-ui/react-icons";
 //React
 import { useTheme } from "../../utils/theme.context";
 import { useEffect, useState } from "react";
-//Images
-import thumbnailTest from "/images/thumbnail-test.png";
+
 /*---------------------------------------------------------------------- */
 
-const ProjectModal = ({ setOpenModal }) => {
+const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
+  const [project, setProject] = useState(null);
   const handleClose = () => {
     const modal = document.querySelector(".projectModal");
     modal.classList.remove("fade-up");
@@ -32,9 +32,10 @@ const ProjectModal = ({ setOpenModal }) => {
   };
 
   useEffect(() => {
+    setProject(modalArray.find((project) => project.id === projectId));
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1000);
   }, []);
   return (
     <section className={`projectModal  ${theme} fade-up`}>
@@ -43,52 +44,42 @@ const ProjectModal = ({ setOpenModal }) => {
       </div>
       <ProjectMenu />
       <div className="projectModal__container">
-        {!isLoading ? (
+        {!isLoading && project !== null ? (
           <>
-            <div className="info-container fade-in-animation" data-aos='fade-in'>
+            <div
+              className="info-container fade-in-animation"
+              data-aos="fade-in"
+            >
               <div className="details">
-                <h3>DESTINY WEBSITE</h3>
+                <h3>{project.title}</h3>
                 <span>Tech Stack</span>
                 <div className="stack">
-                  <TechBadge type={"react"} />
-                  <TechBadge type={"vite"} />
-                  <TechBadge type={"sass"} />
-                  <TechBadge type={"material"} />
-                  <TechBadge type={"figma"} />
+                  {project.stack.map((stackItem, idx) => (
+                    <TechBadge type={stackItem} key={idx} />
+                  ))}
                 </div>
                 <span>Core responsibilities</span>
                 <div className="stack">
-                  <TechBadge type={"design"} />
-                  <TechBadge type={"frontend"} />
-                  <TechBadge type={"api"} />
-                  <TechBadge type={"optimization"} />
+                  {project.core.map((coreItem, idx) => (
+                    <TechBadge type={coreItem} key={idx} />
+                  ))}
                 </div>
                 <div className="actions">
-                  <a href="#" className="actions-item">
+                  <a target="__blank" href={project.url} className="actions-item">
                     <p className="actions-item-text">Preview</p>
                     <RocketIcon className="actions-item-icon" />
                   </a>
                 </div>
               </div>
               <div className="thumbnail">
-                <img src={thumbnailTest} alt="" />
+                <img src={project.thumbnail} alt="" />
               </div>
             </div>
             <div className="description-container fade-in-animation">
               <h5>Project Description</h5>
-              <p>
-                I designed and built the website for a software factory company
-                using React. I handled everything on the frontend — from making
-                sure the design looked great on all screen sizes to optimizing
-                the site for performance and search engines. The project also
-                included an admin panel where the team could manage blog posts
-                and admin users.
-                <br />
-                <br />I connected the frontend to the API throughout the site to
-                pull in dynamic content and make everything work smoothly.
-                Overall, the site gave the company a modern, responsive, and
-                easy-to-manage online presence.
-              </p>
+             
+                  {project.description}
+             
             </div>
           </>
         ) : (
