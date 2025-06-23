@@ -5,6 +5,7 @@
   box-shadow: var(--border-color-halftone) -1px 2px 5px 1px;
     transition: all .7s ease;
      border: 1px solid --project-badge-color;
+     border-radius: 10px;
   p {
     color: var(--project-badge-text);
   }

@@ -7,8 +7,7 @@ import "../scss/components/ProjectMenu.scss";
 import {
   HamburgerMenuIcon,
   Cross1Icon,
-  MoonIcon,
-  SunIcon,
+
 } from "@radix-ui/react-icons";
 //Props
 //React

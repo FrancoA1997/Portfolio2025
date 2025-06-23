@@ -37,13 +37,13 @@
   --accent-color: #14b8a6;
   --project-title-color: var(--color-neutral-000);
   --project-badge-text: var(--color-neutral-000);
-  --project-badge-color: var(--color-brand-900);
-  --project-button-color: var(--color-brand-900);
+  --project-badge-color: rgb(30, 30, 30);
+  --project-button-color: rgb(30, 30, 30);
   --project-bg-1: var(--color-neutral-900);
-  --project-bg-2: var(--color-brand-700);
+  --project-bg-2: rgba(0, 0, 0, 0.5);
   --background-primary-reversed: #1a1b1f;
   --background-secondary-reversed: #09090a;
-  --blend-mode: color-burn;
+  --blend-mode: soft-light;
   --shadow-home-header-images: black;
 
   // --border-color: rgba(0, 0, 0, 0.3);

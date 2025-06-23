@@ -3,7 +3,7 @@
 import "../../scss/components/home/homeHeader.scss";
 import { useTheme } from "../../utils/theme.context.jsx";
 //Components
-import WorldMap from "../ui/WorldMap";
+
 import desktop from "/images/HomeHeader/desktop.png";
 import mobile from "/images/HomeHeader/mobile.png";
 import tablet from "/images/HomeHeader/tablet.png";
@@ -60,11 +60,7 @@ const HomeHeader = () => {
                 My resume <DownloadIcon />{" "}
               </button>
             </div>
-            <div className="socials__btn">
-              <button>
-                See projects <EyeOpenIcon />
-              </button>
-            </div>
+        
           </div>
         </div>
         <div className="images">

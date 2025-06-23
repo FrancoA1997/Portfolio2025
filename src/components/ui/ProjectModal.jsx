@@ -42,7 +42,7 @@ const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
       <div className="close" onClick={() => handleClose()}>
         <ArrowDownIcon fontSize={"2em"} id="icon" />
       </div>
-      <ProjectMenu />
+    
       <div className="projectModal__container">
         {!isLoading && project !== null ? (
           <>

@@ -28,7 +28,7 @@
       min-width: 100px;
       border: 1px solid var(--border-color);
       backdrop-filter: blur(200px);
-      transition: all 0.6s .6s ease;
+      transition: all 0.6s ease;
   }
 
   &__container.show {
@@ -203,7 +203,7 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: background-color 0.6s 0.6s ease;
+
     &:hover {
       border-radius: 50%;
     }
@@ -226,7 +226,7 @@
     align-items: center;
     justify-content: center;
     color: var(--background-secondary);
-    transition: all 0.6s 0.6s ease;
+    transition: all 0.6s  ease;
   }
 
   .icon {

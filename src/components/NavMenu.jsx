@@ -12,6 +12,8 @@ import {
   LayersIcon,
   HamburgerMenuIcon,
   Cross1Icon,
+  MoonIcon,
+  SunIcon,
 } from "@radix-ui/react-icons";
 //Props
 //React
@@ -39,7 +41,7 @@ const NavMenu = () => {
         setTimeout(() => {
           // Finalmente ocultamos el widget
           setIsOpen(false);
-        }, 300);
+        }, 200);
       }, 10);
     } else {
       // Primero mostramos el widget (pero sin animación)
@@ -86,22 +88,40 @@ const NavMenu = () => {
   return (
     <div className={`navMenu ${theme}`}>
       {isOpen && (
-        <div className={`navMenu__container ${isAnimating ? "show" : "hide"}`}>
-          {/* Header */}
-          <div className="widget-header">
-            <div className="language-toggle">
-              <h3>Choose your language </h3>
-              <div className="language-items">
-                <div className="language-item" onClick={() => setTheme('light')}>
-                  <img src={flagEs} alt="toggle-spanish-image" />
-                </div>
-                <div className="language-item active" onClick={() => setTheme('dark')}>
-                  <img src={flagEn} alt="toggle-english-image" />
-                </div>
-              </div>
+        <div className={`navMenu__theme ${isAnimating ? "show" : "hide"}`}>
+          <div className="theme-items">
+            <div
+              className={theme === "light" ? "theme-item active" : "theme-item"}
+              onClick={() => setTheme("light")}
+            >
+            <SunIcon className="icon" id="sun" />
+            </div>
+            <div
+              className={theme === "dark" ? "theme-item active" : "theme-item"}
+              onClick={() => setTheme("dark")}
+            >
+              <MoonIcon className="icon" id="moon" />
             </div>
           </div>
-
+        </div>
+      )}
+      {isOpen && (
+        <div className={`navMenu__language ${isAnimating ? "show" : "hide"}`}>
+          <div className="language-items">
+            <div className="language-item" >
+              <img src={flagEs} alt="toggle-spanish-image" />
+            </div>
+            <div
+              className="language-item active"
+             
+            >
+              <img src={flagEn} alt="toggle-english-image" />
+            </div>
+          </div>
+        </div>
+      )}
+      {isOpen && (
+        <div className={`navMenu__container ${isAnimating ? "show" : "hide"}`}>
           {/* Contact options */}
           <div className="links-container">
             {links.map((link) => (

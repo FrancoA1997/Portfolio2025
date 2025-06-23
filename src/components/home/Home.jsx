@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import ProjectModal from "../ui/ProjectModal";
 import NavMenu from "../NavMenu";
 import Stack from "./Stack";
+import Studies from "./Studies";
 //Icons
 //Props
 import { projects, templates } from "../../data/projects";
@@ -55,6 +56,7 @@ const Home = () => {
           templates={templates}
         />
         <Stack/>
+        <Studies/>
       </article>
     </main>
   );
