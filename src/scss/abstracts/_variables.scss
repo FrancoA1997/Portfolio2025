@@ -1,6 +1,6 @@
 :root {
   --error-color: #ef4444;
-  --font-mont: "IBM Plex Mono", monospace;
+  --font-mont: "Geist", sans-serif;
   /* Fondo y Neutros */
   --color-neutral-000: #f8f9faff; /* Seasalt - Muy claro, ideal para fondo principal */
   --color-neutral-100: #e9ecefff; /* Antiflash White - Ligeramente más oscuro, para elementos claros secundarios */
@@ -39,8 +39,7 @@
   --project-badge-text: var(--color-neutral-000);
   --project-badge-color: rgb(30, 30, 30);
   --project-button-color: rgb(30, 30, 30);
-  --project-bg-1: var(--color-neutral-900);
-  --project-bg-2: rgba(0, 0, 0, 0.5);
+
   --background-primary-reversed: #1a1b1f;
   --background-secondary-reversed: #09090a;
   --blend-mode: soft-light;
@@ -83,11 +82,10 @@
   --border-color-halftone: rgba(255, 255, 255, 0.1);
   --accent-color: #14b8a6;
   --project-title-color: var(--color-brand-50);
-  --project-badge-color: #1a1b1f;
+  --project-badge-color: #313131;
   --project-badge-text: var(--color-brand-50);
-  --project-button-color: #1a1b1f;
-  --project-bg-1: var(--color-brand-200);
-  --project-bg-2: var(--color-neutral-600);
+  --project-button-color: #313131;
+;
   --background-primary-reversed: var(--color-neutral-000);
   --background-secondary-reversed: var(--color-neutral-100);
   --blend-mode: multiply;

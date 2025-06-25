@@ -46,24 +46,30 @@ const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
       <div className="projectModal__container">
         {!isLoading && project !== null ? (
           <>
+              <h3>{project.title}</h3>
             <div
               className="info-container fade-in-animation"
               data-aos="fade-in"
             >
               <div className="details">
-                <h3>{project.title}</h3>
+                <div className="details-item">
+
                 <span>Tech Stack</span>
                 <div className="stack">
                   {project.stack.map((stackItem, idx) => (
                     <TechBadge type={stackItem} key={idx} />
                   ))}
                 </div>
+                  </div>
+                       <div className="details-item">
+
                 <span>Core responsibilities</span>
                 <div className="stack">
                   {project.core.map((coreItem, idx) => (
                     <TechBadge type={coreItem} key={idx} />
                   ))}
                 </div>
+                  </div>
                 <div className="actions">
                   <a target="__blank" href={project.url} className="actions-item">
                     <p className="actions-item-text">Preview</p>

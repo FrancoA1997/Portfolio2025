@@ -2,7 +2,7 @@
 
 .projectModal {
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   z-index: 99;
   position: fixed;
   top: 0;
@@ -14,10 +14,13 @@
   background-color: var(--background-primary);
   border-radius: 0em;
   transition: all 0.3s ease-in;
+  padding-top: 5em;
+  padding-left: 1em;
+  padding-right: 1em;
   .close {
     position: fixed;
-    top: 5em;
-    right: 1em;
+    top: 1em;
+    left: 1em;
     border: 1px solid var(--border-color);
     width: 3.5rem;
     height: 3.5rem;
@@ -26,40 +29,40 @@
     justify-content: center;
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
+    z-index: 999;
     cursor: pointer;
-     background-color: var(--text-primary);
-   color: var(--background-secondary);
+    background-color: var(--text-primary);
+    color: var(--background-secondary);
     #icon {
       scale: 1.2;
       transition: all 0.3s ease-in-out;
     }
-    &:hover {
-      border-radius: 50%;
-      #icon {
-      scale: 1.5;
+    @media (hover: hover) {
+      &:hover {
+        border-radius: 50%;
+        #icon {
+          scale: 1.5;
+        }
       }
     }
   }
   &__container {
     height: 100%;
     width: 100%;
+    max-width: 1440px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: var(--project-bg-2);
-    max-width: 1440px;
     padding: 2em;
     border-top-left-radius: 15px;
-    position: relative;
-    z-index: 8888;
-    background-image: url("/bg-patter-6.png");
-    background-blend-mode: var(--blend-mode);
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color-halftone);
+    box-shadow: var(--background-primary) 0px -500px 150px -300px inset,
+      var(--background-primary) 0px -18px 36px -18px inset;
     opacity: 0;
-    animation: modal-fade-up 1s 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    margin-top: 15em;
-    overflow-y: auto;
-    border: 0;
-    transition: all 0.3s ease-in;
 
+    overflow-y: auto;
+    animation: modal-fade-up 1s 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     &::-webkit-scrollbar {
       width: 10px;
       transition: all 0.3s ease-in-out;
@@ -76,9 +79,15 @@
       border-radius: 1px;
       transition: all 0.3s ease-in-out;
     }
-    .fade-in-animation{
+    .fade-in-animation {
       opacity: 0;
-       animation: fade-in-anim .3s 0.1s ease-in forwards;
+      animation: fade-in-anim 0.3s 0.1s ease-in forwards;
+    }
+    h3 {
+      font-size: 2.5em;
+      color: var(--text-primary);
+      margin-bottom: 0.3em;
+      text-transform: uppercase;
     }
     .info-container {
       width: 100%;
@@ -87,8 +96,6 @@
       align-items: flex-start;
       gap: 1em;
       margin-bottom: 3em;
-     
-     
       .thumbnail {
         width: 50%;
         height: auto;
@@ -105,31 +112,32 @@
         display: flex;
         flex-direction: column;
         gap: 0.5em;
-        h3 {
-          font-size: 3em;
-          color: var(--project-title-color);
-          margin-bottom: 0.3em;
-        }
-        span {
-          font-size: 1.5em;
-          color: var(--project-title-color);
-          margin-bottom: 0.5em;
-          text-transform: uppercase;
-          font-weight: 600;
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+          span {
+            font-size: 1.5em;
+            color: var(--text-primary);
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+          .stack {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            justify-content: flex-start;
+            background-color: transparent;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color-halftone);
+            padding-bottom: 1em;
+          }
         }
 
-        .stack {
-          width: 100%;
-          height: fit-content;
-          display: flex;
-          flex-direction: row;
-          gap: 1em;
-          justify-content: flex-start;
-          background-color: transparent;
-          flex-wrap: wrap;
-          border-bottom: 1px solid var(--border-color-halftone);
-          padding-bottom: 1em;
-        }
         .actions {
           width: 100%;
           height: fit-content;
@@ -139,7 +147,7 @@
           justify-content: flex-end;
           gap: 1em;
           margin-top: auto;
-          span{
+          span {
             margin-bottom: 0;
           }
           &-item {
@@ -173,7 +181,6 @@
               color: var(--button-text);
               letter-spacing: 1px;
               transition: all 0.3s ease-in;
-
             }
             &-icon {
               color: var(--accent-color);
@@ -186,21 +193,482 @@
     }
     .description-container {
       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       gap: 1em;
       h5 {
         text-transform: uppercase;
         font-size: 2.5em;
-        color: var(--project-title-color);
+        color: var(--text-primary);
+
         line-height: 1.5;
       }
       p {
         font-size: 1.2em;
-        color: var(--project-title-color);
+        color: var(--text-primary);
+
         line-height: 1.5;
         font-weight: 500;
-         white-space: pre-wrap; 
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
+@media (max-width: 720px) {
+  .projectModal {
+    padding-top: 5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    .close {
+      top: 1em;
+      left: 1em;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      #icon {
+        scale: 1.2;
+      }
+    }
+    &__container {
+      max-width: 720px;
+      padding: 1em 10px;
+      opacity: 0;
+      overflow-y: auto;
+      h3 {
+        font-size: 2em;
+
+        margin-bottom: 0.3em;
+      }
+      .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 3em;
+
+        .thumbnail {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16/9;
+        }
+        .details {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            span {
+              font-size: 1.5em;
+
+              margin-bottom: 0.5em;
+
+              font-weight: 600;
+            }
+            .stack {
+              gap: 1em;
+
+              padding-bottom: 1em;
+            }
+          }
+
+          .actions {
+            width: 100%;
+
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1em;
+            margin-top: auto;
+            span {
+              margin-bottom: 0;
+            }
+            &-item {
+              height: 40px;
+              width: 100% !important;
+              padding: 0 2em;
+              gap: 1em;
+
+              &-text {
+                font-size: 1em;
+
+                font-weight: 600;
+
+                letter-spacing: 2px;
+              }
+              &-icon {
+                scale: 1;
+              }
+            }
+          }
+        }
+      }
+      .description-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        h5 {
+          text-transform: uppercase;
+          font-size: 1.5em;
+
+          line-height: 1.5;
+        }
+        p {
+          font-size: 1em;
+
+          line-height: 1.5;
+          font-weight: 500;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  .projectModal {
+    padding-top: 5em;
+
+    .close {
+      top: 1em;
+      left: 1em;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      #icon {
+        scale: 1.2;
+      }
+    }
+    &__container {
+      max-width: 720px;
+      padding: 1em;
+      opacity: 0;
+      overflow-y: auto;
+      h3 {
+        font-size: 2.5em;
+
+        margin-bottom: 0.3em;
+      }
+      .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 3em;
+
+        .thumbnail {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16/9;
+        }
+        .details {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            span {
+              font-size: 1.5em;
+
+              margin-bottom: 0.5em;
+
+              font-weight: 600;
+            }
+            .stack {
+              gap: 1em;
+
+              padding-bottom: 1em;
+            }
+          }
+
+          .actions {
+            width: 100%;
+
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1em;
+            margin-top: auto;
+            span {
+              margin-bottom: 0;
+            }
+            &-item {
+              height: 35px;
+              width: 100% !important;
+              padding: 0 2em;
+              gap: 1em;
+
+              &-text {
+                font-size: 1.2em;
+
+                font-weight: 600;
+
+                letter-spacing: 2px;
+              }
+              &-icon {
+                scale: 1.2;
+              }
+            }
+          }
+        }
+      }
+      .description-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        h5 {
+          text-transform: uppercase;
+          font-size: 2em;
+
+          line-height: 1.5;
+        }
+        p {
+          font-size: 1.2em;
+
+          line-height: 1.5;
+          font-weight: 500;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .projectModal {
+    padding-top: 5em;
+
+    .close {
+      top: 1em;
+      left: 1em;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      #icon {
+        scale: 1.2;
+      }
+    }
+    &__container {
+      max-width: 1024px;
+      padding: 1em;
+      opacity: 0;
+      overflow-y: auto;
+      h3 {
+        font-size: 2.5em;
+
+        margin-bottom: 0.3em;
+      }
+      .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 3em;
+
+        .thumbnail {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16/9;
+        }
+        .details {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            span {
+              font-size: 1.5em;
+
+              margin-bottom: 0.5em;
+
+              font-weight: 600;
+            }
+            .stack {
+              gap: 1em;
+
+              padding-bottom: 1em;
+            }
+          }
+
+          .actions {
+            width: 100%;
+
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1em;
+            margin-top: auto;
+            span {
+              margin-bottom: 0;
+            }
+            &-item {
+              height: 35px;
+              width: 100% !important;
+              padding: 0 2em;
+              gap: 1em;
+
+              &-text {
+                font-size: 1.2em;
+
+                font-weight: 600;
+
+                letter-spacing: 2px;
+              }
+              &-icon {
+                scale: 1.2;
+              }
+            }
+          }
+        }
+      }
+      .description-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        h5 {
+          text-transform: uppercase;
+          font-size: 2em;
+
+          line-height: 1.5;
+        }
+        p {
+          font-size: 1.2em;
+
+          line-height: 1.5;
+          font-weight: 500;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .projectModal {
+    padding-top: 5em;
+
+    .close {
+      top: 1em;
+      left: 1em;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      #icon {
+        scale: 1.2;
+      }
+    }
+    &__container {
+      max-width: 1280px;
+      padding: 2em;
+
+      opacity: 0;
+      overflow-y: auto;
+      h3 {
+        font-size: 2.5em;
+
+        margin-bottom: 0.3em;
+      }
+      .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 3em;
+
+        .thumbnail {
+          width: 50%;
+          height: auto;
+          aspect-ratio: 16/9;
+        }
+        .details {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            span {
+              font-size: 1.5em;
+
+              margin-bottom: 0.5em;
+
+              font-weight: 600;
+            }
+            .stack {
+              gap: 1em;
+
+              padding-bottom: 1em;
+            }
+          }
+
+          .actions {
+            width: 100%;
+
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1em;
+            margin-top: auto;
+            span {
+              margin-bottom: 0;
+            }
+            &-item {
+              height: 35px;
+
+              padding: 0 2em;
+              gap: 1em;
+
+              &-text {
+                font-size: 1.2em;
+
+                font-weight: 600;
+
+                letter-spacing: 1px;
+              }
+              &-icon {
+                scale: 1.2;
+              }
+            }
+          }
+        }
+      }
+      .description-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        h5 {
+          text-transform: uppercase;
+          font-size: 2em;
+
+          line-height: 1.5;
+        }
+        p {
+          font-size: 1.2em;
+
+          line-height: 1.5;
+          font-weight: 500;
+          white-space: pre-wrap;
+        }
       }
     }
   }

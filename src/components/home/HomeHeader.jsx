@@ -27,18 +27,18 @@ const HomeHeader = () => {
   return (
     <header className={`homeHeader ${theme}`}>
       <div className="homeHeader__container">
-        {theme === "light" ? (
-          <div key={"light"} className="background-light" />
-        ) : (
-          <div key={"dark"} className="background-dark" />
-        )}
         <div className="info">
           <div className="title">
             <h1>Franco Alvarez </h1>
             <h2>
-              <LayersIcon id="icon" />
-              Full stack web developer |<DimensionsIcon id="icon-frontend" />
-              <strong> Frontend Focused </strong>
+              <div className="title-item">
+                <LayersIcon id="icon" />
+                Full stack web developer
+              </div>
+              <div className="title-item">
+                <DimensionsIcon id="icon-frontend" />
+                <strong> Frontend Focused </strong>
+              </div>
             </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
@@ -60,13 +60,12 @@ const HomeHeader = () => {
                 My resume <DownloadIcon />{" "}
               </button>
             </div>
-        
           </div>
         </div>
         <div className="images">
-          <img src={mobile} alt="mobile" id="mobile" />
-          <img src={tablet} alt="tablet" id="tablet" />
-          <img src={desktop} alt="desktop" id="desktop" />
+          <img src={mobile} alt="mobile" className="mobile" />
+          <img src={tablet} alt="tablet" className="tablet" />
+          <img src={desktop} alt="desktop" className="desktop" />
           {/* <WorldMap/>
         <p className='switch-theme'>hover to Switch theme</p> */}
         </div>

@@ -41,7 +41,7 @@ const Projects = ({
     <section className={`projects light ${theme}`}>
       <div className="projects__container ">
         <h2>Freelance projects</h2>
-        <div className="projects__content blue">
+        <div className="projects__content">
           {projects.map((project) => (
             <div key={project.id} className="projects__item">
               <AspectRatio.Root ratio={16 / 9}>
