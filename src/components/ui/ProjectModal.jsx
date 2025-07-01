@@ -72,7 +72,7 @@ const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
                   </div>
                 <div className="actions">
                   <a target="__blank" href={project.url} className="actions-item">
-                    <p className="actions-item-text">Preview</p>
+                    <p className="actions-item-text">deploy</p>
                     <RocketIcon className="actions-item-icon" />
                   </a>
                 </div>

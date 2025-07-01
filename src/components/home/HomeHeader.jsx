@@ -41,11 +41,7 @@ const HomeHeader = () => {
               </div>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-              doloribus, quia libero voluptate deserunt ea corrupti esse nobis,
-              provident perferendis alias laboriosam quis? Deleniti quaerat,
-              dignissimos harum magni eveniet dolorum excepturi, aperiam, quasi
-              nemo ut dolor sequi. Exercitationem ea inventore fuga commodi.
+    I'm a <span className="highlight">Full Stack Web Developer</span> with a strong focus on <strong>Frontend</strong>.<br/> Over the past two years, I've built responsive, user-friendly apps with an emphasis on clean, efficient code. I enjoy working with teams and staying up to date with new tools and trends to keep improving and delivering great results.
             </p>
           </div>
           <div className="socials">
@@ -57,7 +53,9 @@ const HomeHeader = () => {
             </div>
             <div className="socials__btn">
               <button>
-                My resume <DownloadIcon />{" "}
+                <p>
+                  Resume <DownloadIcon />
+                </p>{" "}
               </button>
             </div>
           </div>

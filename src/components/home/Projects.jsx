@@ -62,7 +62,7 @@ const Projects = ({
 
                 <div className="links  ">
                   <a href={project.url} target="__blank" className="links-item">
-                    <p className="links-item-text">preview</p>
+                    <p className="links-item-text">deploy</p>
                     <RocketIcon className="icon" />
                   </a>
                   <div
@@ -101,7 +101,7 @@ const Projects = ({
 
                 <div className="links  ">
                   <a href={project.url} target="__blank" className="links-item">
-                    <p className="links-item-text">preview</p>
+                    <p className="links-item-text">deploy</p>
                     <RocketIcon className="icon" />
                   </a>
                   <div
