@@ -34,40 +34,15 @@
   --border-color-halftone: rgba(173, 181, 189, 0.7);
   --border-color: var(--color-neutral-400);
   --hover-button-color: var(--color-neutral-200);
-  --accent-color: #14b8a6;
+  --accent-color: #0d9676;
   --project-title-color: var(--color-neutral-000);
   --project-badge-text: var(--color-neutral-000);
   --project-badge-color: rgb(30, 30, 30);
   --project-button-color: rgb(30, 30, 30);
-
   --background-primary-reversed: #1a1b1f;
   --background-secondary-reversed: #09090a;
   --blend-mode: soft-light;
   --shadow-home-header-images: black;
-
-  // --border-color: rgba(0, 0, 0, 0.3);
-  // --surface: black;
-  // --primary-color: #1e40af;
-  // --secondary-color: #4338ca;
-  // --accent-color: #0d9488;
-  // --primary-text: black;
-  // --secondary-text: #334155;
-  // --background: #ffffff;
-  // --second-background: #d0d0d0;
-  // --button-text: white;
-  // --project-bg-1: #e0e7ff;
-  // --project-bg-2: #e6d2fe;
-  // --primary-text-reversed: white;
-  // --secondary-text-reversed: rgb(187, 224, 247);
-  // --second-background-reversed: #1b1b1b;
-  // --background-reversed: #000000;
-  // --brightness: 1;
-  // --dots-opacity: 0.95;
-  // --dots-blur: 2px;
-  // --background-halftone: rgba(255, 255, 255, 0.5);
-  // --background-halftone-reversed: rgba(0, 0, 0, 0.5);
-  // --border-half-tone: rgba(0, 0, 0, 0.5);
-  // --border-half-tone-reversed: rgba(255, 255, 255, 0.5);
 }
 
 .dark {
@@ -78,41 +53,17 @@
   --button-color: var(--color-brand-600);
   --hover-button-color: var(--color-brand-700);
   --button-text: var(--color-brand-50);
-  --border-color: rgba(255, 255, 255, 0.153);
+  --border-color: rgba(255, 255, 255, 0.3);
   --border-color-halftone: rgba(255, 255, 255, 0.1);
   --accent-color: #14b8a6;
   --project-title-color: var(--color-brand-50);
   --project-badge-color: #313131;
   --project-badge-text: var(--color-brand-50);
   --project-button-color: #313131;
-;
   --background-primary-reversed: var(--color-neutral-000);
   --background-secondary-reversed: var(--color-neutral-100);
   --blend-mode: multiply;
   --shadow-home-header-images: rgba(255, 255, 255, 0.061);
-  // --border-color: rgba(255, 255, 255, 0.3);
-  // --surface: white;
-  // --primary-color: #1e40af;
-  // --secondary-color: #6366f1;
-  // --primary-text: white;
-  // --secondary-text: rgb(187, 224, 247);
-  // --background: black;
-  // --second-background: #1b1b1b;
-  // --button-text: black;
-  // --project-bg-1: #1e40af;
-  // --project-bg-2: #6366f1;
-  // --primary-text-reversed: black;
-  // --secondary-text-reversed: #334155;
-  // --second-background-reversed: #d0d0d0;
-  // --background-reversed: #ffffff;
-  // --brightness: 3;
-  // --dots-opacity: 0.35;
-  // --dots-blur: 1px;
-  // --background-halftone: rgba(0, 0, 0, 0.3);
-  // --background-halftone-reversed: rgba(255, 255, 255, 0.5);
-
-  // --border-half-tone: rgba(255, 255, 255, 0.5);
-  // --border-half-tone-reversed: rgba(0, 0, 0, 0.5);
 }
 
 //CUSTOM ANIMATIONS

@@ -12,11 +12,10 @@ import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
   DownloadIcon,
-  EyeOpenIcon,
   DimensionsIcon,
   LayersIcon,
 } from "@radix-ui/react-icons";
-
+import { useLanguage } from "../../utils/language.context.jsx";
 //Props
 //React
 //Images
@@ -24,8 +23,9 @@ import {
 /*---------------------------------------------------------------------- */
 const HomeHeader = () => {
   const { theme } = useTheme();
+  const { language } = useLanguage();
   return (
-    <header className={`homeHeader ${theme}`}>
+    <header id="home" className={`homeHeader ${theme}`}>
       <div className="homeHeader__container">
         <div className="info">
           <div className="title">
@@ -33,30 +33,47 @@ const HomeHeader = () => {
             <h2>
               <div className="title-item">
                 <LayersIcon id="icon" />
-                Full stack web developer
+                {language === 'en' ? "Full stack web developer": "Desarrollador web Full Stack" }
+                
               </div>
               <div className="title-item">
                 <DimensionsIcon id="icon-frontend" />
-                <strong> Frontend Focused </strong>
+                <strong> {language === 'en' ? "Frontend Focused": "Enfoque Frontend" } </strong>
               </div>
             </h2>
             <p>
-    I'm a <span className="highlight">Full Stack Web Developer</span> with a strong focus on <strong>Frontend</strong>.<br/> Over the past two years, I've built responsive, user-friendly apps with an emphasis on clean, efficient code. I enjoy working with teams and staying up to date with new tools and trends to keep improving and delivering great results.
+              {language === "es" ? (
+                <p>
+                  En los últimos <span className="highlighted">2 años</span>, he estado construyendo aplicaciones
+                  web, tanto en el{" "}
+                  <span className="highlighted">front-end</span> como
+                  aplicaciones <span className="highlighted">full-stack</span>.
+                  Mi trabajo se centra en participar en cada fase del
+                  desarrollo, desde la idea inicial hasta el despliegue final.
+                </p>
+              ) : (
+                <p>
+                  Over the past <span className="highlighted">2 years</span>, I've been building web applications,
+                  both <span className="highlighted">front-end</span> and <span className="highlighted">full-stack</span>. My work focuses on being
+                  involved in every phase of development, from the initial idea
+                  to the final deployment.
+                </p>
+              )}
             </p>
           </div>
           <div className="socials">
-            <div className="socials__icon">
+            <a href="https://github.com/FrancoA1997" target="__blank" className="socials__icon">
               <GitHubLogoIcon id="icon" />
-            </div>
-            <div className="socials__icon">
+            </a>
+            <a href="https://www.linkedin.com/in/franco-alvarez-nahuel/" target="__blank" className="socials__icon">
               <LinkedInLogoIcon id="icon" />
-            </div>
+            </a>
             <div className="socials__btn">
-              <button>
+              <a href="/curriculum.pdf" download="franco-alvarez-resume.pdf">
                 <p>
-                  Resume <DownloadIcon />
+                  {language === "en" ? "Resume" : "Curriculum"} <DownloadIcon />
                 </p>{" "}
-              </button>
+              </a>
             </div>
           </div>
         </div>

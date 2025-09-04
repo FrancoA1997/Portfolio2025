@@ -12,6 +12,7 @@ import Studies from "./Studies";
 //Icons
 //Props
 import { projects, templates } from "../../data/projects";
+import Footer from "./Footer";
 //React
 //Images
 //NextJs
@@ -58,6 +59,7 @@ const Home = () => {
         <Stack/>
         <Studies/>
       </article>
+      <Footer/>
     </main>
   );
 };

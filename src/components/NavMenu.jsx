@@ -17,11 +17,12 @@ import {
 } from "@radix-ui/react-icons";
 //Props
 //React
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTheme } from "../utils/theme.context";
 //Images
 import flagEs from "../assets/navMenu/ar.svg";
 import flagEn from "../assets/navMenu/us.svg";
+import { useLanguage } from "../utils/language.context";
 //NextJs
 /*---------------------------------------------------------------------- */
 
@@ -30,14 +31,37 @@ const NavMenu = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isIconTransitioning, setIsIconTransitioning] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { language, setLanguage } = useLanguage();
+  const componentRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Si el clic no fue dentro del componente y el menú está abierto
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    // Agrega el event listener al documento cuando el componente se monta
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Remueve el event listener cuando el componente se desmonta para evitar fugas de memoria
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   const toggleWidget = () => {
     setIsIconTransitioning(true);
 
     if (isOpen) {
+      console.log(isOpen);
       // Primero iniciamos la animación de los iconos
       setTimeout(() => {
         // Luego iniciamos la animación de cierre del widget
         setIsAnimating(false);
+
         setTimeout(() => {
           // Finalmente ocultamos el widget
           setIsOpen(false);
@@ -62,31 +86,27 @@ const NavMenu = () => {
     {
       name: "Home",
       icon: <HomeIcon />,
+      href: "home",
     },
     {
       name: "Experience",
       icon: <BackpackIcon />,
-    },
-    {
-      name: "About me",
-      icon: <InfoCircledIcon />,
+      href: "experience",
     },
     {
       name: "Stack",
       icon: <LayersIcon />,
+      href: "stack",
     },
     {
       name: "Studies",
       icon: <FileTextIcon />,
-    },
-    {
-      name: "Contact",
-      icon: <ChatBubbleIcon />,
+      href: "studies",
     },
   ];
 
   return (
-    <div className={`navMenu ${theme}`}>
+    <div ref={componentRef} className={`navMenu ${theme}`}>
       {isOpen && (
         <div className={`navMenu__theme ${isAnimating ? "show" : "hide"}`}>
           <div className="theme-items">
@@ -94,7 +114,7 @@ const NavMenu = () => {
               className={theme === "light" ? "theme-item active" : "theme-item"}
               onClick={() => setTheme("light")}
             >
-            <SunIcon className="icon" id="sun" />
+              <SunIcon className="icon" id="sun" />
             </div>
             <div
               className={theme === "dark" ? "theme-item active" : "theme-item"}
@@ -108,12 +128,19 @@ const NavMenu = () => {
       {isOpen && (
         <div className={`navMenu__language ${isAnimating ? "show" : "hide"}`}>
           <div className="language-items">
-            <div className="language-item" >
+            <div
+              onClick={() => setLanguage("es")}
+              className={
+                language === "es" ? "language-item active" : "language-item "
+              }
+            >
               <img src={flagEs} alt="toggle-spanish-image" />
             </div>
             <div
-              className="language-item active"
-             
+              className={
+                language === "en" ? "language-item active" : "language-item "
+              }
+              onClick={() => setLanguage("en")}
             >
               <img src={flagEn} alt="toggle-english-image" />
             </div>
@@ -126,7 +153,7 @@ const NavMenu = () => {
           <div className="links-container">
             {links.map((link) => (
               <a
-                href={`#`}
+                href={`#${link.href}`}
                 target="__blank"
                 key={link.name}
                 className="links-item"

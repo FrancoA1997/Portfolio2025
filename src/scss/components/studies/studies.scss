@@ -6,19 +6,21 @@
   align-items: center;
   justify-content: center;
   background-color: var(--background-primary);
+  transition: all 0.3s 0.3s ease;
+  padding-bottom: 3em;
   &__container {
     padding: 1rem 1rem;
-   width: 100%;
-   max-width: 1440px;
-       @media (min-width: 1280px) and (max-width: 1440px) {
-        max-width: 1280px;
-       }
-          @media (min-width: 1024px) and (max-width: 1280px) {
-        max-width: 1024px;
-       }
-          @media (max-width: 1024px) {
-        max-width: 720px;
-       }
+    width: 100%;
+    max-width: 1440px;
+    @media (min-width: 1280px) and (max-width: 1440px) {
+      max-width: 1280px;
+    }
+    @media (min-width: 1024px) and (max-width: 1280px) {
+      max-width: 1024px;
+    }
+    @media (max-width: 1024px) {
+      max-width: 720px;
+    }
   }
   /* ---------- Encabezado ---------- */
   &__header {
@@ -35,6 +37,7 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
       line-height: 1.2;
+      transition: all 0.3s 0.3s ease;
     }
     @media (max-width: 1024px) {
       .title {
@@ -210,7 +213,7 @@
   border: 1px solid var(--border-color-halftone);
   background-color: var(--background-secondary);
 
-  transition: all 0.3s ease;
+  transition: all 0.7s ease-in;
   position: relative;
 }
 .card:hover {
@@ -333,7 +336,7 @@
 }
 
 .field {
-   color: var(--text-primary);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -367,7 +370,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-   color: var(--text-primary);
+  color: var(--text-primary);
 }
 .metadataItem svg {
   width: 1rem;
@@ -390,7 +393,47 @@
     line-height: 1.5;
   }
 }
-
+/* ---------- Lista de tecnologias ---------- */
+.badgesSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1em;
+  margin-top: 0.5em;
+  @media (max-width: 720px) {
+  flex-direction: column;
+  }
+  .badgesContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 720px) {
+      width: 100%;
+    }
+    h4 {
+      margin-bottom: 0.5em;
+      font-size: 1.2em;
+     color: var(--accent-color);
+    }
+    .tech-badges {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      .tech-badge {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        align-items: center;
+        color: var(--text-primary);
+        #icon {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
 /* ---------- utilidades ---------- */
 @media (max-width: 1024px) {
   .desktopOnly {

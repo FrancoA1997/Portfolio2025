@@ -10,7 +10,7 @@
   justify-content: center;
   background-color: var(--background-primary);
   z-index: 10;
-  transition: all 0.7s ease-in;
+  transition: all 0.3s 0.3s ease;
   &__container {
     padding: 0em 1em 3em 1em;
     max-width: 1440px;
@@ -89,6 +89,7 @@
 
       border: 1px solid var(--border-color-halftone);
       background-color: var(--background-secondary);
+        transition: all 0.7s ease-in;
       padding: 1em;
       &-item {
         width: calc(20% - 1em);
@@ -383,7 +384,7 @@
 
         padding: 1em;
         &-item {
-          width: calc(20% - 1em);
+          width: calc(25% - 1em);
           height: calc(50% - 1em);
 
           .icon {

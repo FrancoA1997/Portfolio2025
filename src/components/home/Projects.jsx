@@ -14,6 +14,7 @@ import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { RocketIcon } from "@radix-ui/react-icons";
 import ProjectBadge from "../ui/TechBadge.jsx";
 import { useTheme } from "../../utils/theme.context.jsx";
+import { useLanguage } from "../../utils/language.context.jsx";
 
 //NextJs
 /*---------------------------------------------------------------------- */
@@ -26,7 +27,7 @@ const Projects = ({
   templates,
 }) => {
   const { theme } = useTheme();
-
+  const { language } = useLanguage();
   const handleProject = (id, type) => {
     if (type === "projects") {
       setModalArray(projects);
@@ -38,9 +39,11 @@ const Projects = ({
     setOpenModal(true);
   };
   return (
-    <section className={`projects light ${theme}`}>
+    <section id="experience" className={`projects light ${theme}`}>
       <div className="projects__container ">
-        <h2>Freelance projects</h2>
+        <h2>
+          {language === "en" ? "Freelance projects" : "Proyectos freelance"}
+        </h2>
         <div className="projects__content">
           {projects.map((project) => (
             <div key={project.id} className="projects__item">
@@ -62,14 +65,18 @@ const Projects = ({
 
                 <div className="links  ">
                   <a href={project.url} target="__blank" className="links-item">
-                    <p className="links-item-text">deploy</p>
+                    <p className="links-item-text">
+                      {language === "en" ? "deploy" : "despliegue"}
+                    </p>
                     <RocketIcon className="icon" />
                   </a>
                   <div
                     onClick={() => handleProject(project.id, "projects")}
                     className="links-item"
                   >
-                    <p className="links-item-text">More</p>
+                    <p className="links-item-text">
+                 Info
+                    </p>
                     <InfoCircledIcon className="icon" />
                   </div>
                 </div>
@@ -78,7 +85,9 @@ const Projects = ({
           ))}
         </div>
 
-        <h2>Freelance templates</h2>
+        <h2>
+          {language === "en" ? "Freelance templates" : "Plantillas Freelance"}
+        </h2>
 
         <div className="projects__content black">
           {templates.map((project) => (
@@ -101,14 +110,16 @@ const Projects = ({
 
                 <div className="links  ">
                   <a href={project.url} target="__blank" className="links-item">
-                    <p className="links-item-text">deploy</p>
+                    <p className="links-item-text">
+                      {language === "en" ? "deploy" : "despliegue"}
+                    </p>
                     <RocketIcon className="icon" />
                   </a>
                   <div
                     onClick={() => handleProject(project.id, "templates")}
                     className="links-item"
                   >
-                    <p className="links-item-text">More</p>
+                    <p className="links-item-text">Info</p>
                     <InfoCircledIcon className="icon" />
                   </div>
                 </div>

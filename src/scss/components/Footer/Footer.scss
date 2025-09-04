@@ -1,0 +1,45 @@
+@use "../../abstracts/variables";
+
+.footer {
+  background-color: var(--background-secondary);
+  color: #e5e5e5;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color-halftone);
+  
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
+}
+.copyright {
+  color:  var(--text-primary);
+}
+
+.developer {
+  color:  var(--text-primary);
+  display: flex;
+  flex-direction: row;
+  gap: .3em;
+}
+.highlight {
+  color:  var(--accent-color);
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
