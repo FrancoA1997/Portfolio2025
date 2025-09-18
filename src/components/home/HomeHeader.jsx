@@ -33,19 +33,25 @@ const HomeHeader = () => {
             <h2>
               <div className="title-item">
                 <LayersIcon id="icon" />
-                {language === 'en' ? "Full stack web developer": "Desarrollador web Full Stack" }
-                
+                {language === "en"
+                  ? "Full stack web developer"
+                  : "Desarrollador web Full Stack"}
               </div>
               <div className="title-item">
                 <DimensionsIcon id="icon-frontend" />
-                <strong> {language === 'en' ? "Frontend Focused": "Enfoque Frontend" } </strong>
+                <strong>
+                  {" "}
+                  {language === "en"
+                    ? "Frontend Focused"
+                    : "Enfoque Frontend"}{" "}
+                </strong>
               </div>
             </h2>
             <p>
               {language === "es" ? (
                 <p>
-                  En los últimos <span className="highlighted">2 años</span>, he estado construyendo aplicaciones
-                  web, tanto en el{" "}
+                  En los últimos <span className="highlighted">2 años</span>, he
+                  estado construyendo aplicaciones web, tanto en el{" "}
                   <span className="highlighted">front-end</span> como
                   aplicaciones <span className="highlighted">full-stack</span>.
                   Mi trabajo se centra en participar en cada fase del
@@ -53,23 +59,44 @@ const HomeHeader = () => {
                 </p>
               ) : (
                 <p>
-                  Over the past <span className="highlighted">2 years</span>, I've been building web applications,
-                  both <span className="highlighted">front-end</span> and <span className="highlighted">full-stack</span>. My work focuses on being
-                  involved in every phase of development, from the initial idea
-                  to the final deployment.
+                  Over the past <span className="highlighted">2 years</span>,
+                  I've been building web applications, both{" "}
+                  <span className="highlighted">front-end</span> and{" "}
+                  <span className="highlighted">full-stack</span>. My work
+                  focuses on being involved in every phase of development, from
+                  the initial idea to the final deployment.
                 </p>
               )}
             </p>
           </div>
           <div className="socials">
-            <a href="https://github.com/FrancoA1997" target="__blank" className="socials__icon">
+            <a
+              href="https://github.com/FrancoA1997"
+              target="__blank"
+              className="socials__icon"
+            >
               <GitHubLogoIcon id="icon" />
             </a>
-            <a href="https://www.linkedin.com/in/franco-alvarez-nahuel/" target="__blank" className="socials__icon">
+            <a
+              href="https://www.linkedin.com/in/franco-alvarez-nahuel/"
+              target="__blank"
+              className="socials__icon"
+            >
               <LinkedInLogoIcon id="icon" />
             </a>
             <div className="socials__btn">
-              <a href="/curriculum.pdf" download="franco-alvarez-resume.pdf">
+              <a
+                href={
+                  language === "en"
+                    ? "/franco-alvarez-resume.pdf"
+                    : "/franco-alvarez-curriculum.pdf"
+                }
+                download={
+                  language === "en"
+                    ? "franco-alvarez-resume.pdf"
+                    : "franco-alvarez-curriculum.pdf"
+                }
+              >
                 <p>
                   {language === "en" ? "Resume" : "Curriculum"} <DownloadIcon />
                 </p>{" "}

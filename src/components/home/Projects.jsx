@@ -52,7 +52,7 @@ const Projects = ({
               </AspectRatio.Root>
               <div className="projects__item-info">
                 <div className="project_title">
-                  <h4>{project.title}</h4>
+                  <h4>{language === "en" ? project.title : project.titulo}</h4>
                 </div>
                 <div className="badges">
                   {project.core.map((coreItem, idx) => (
@@ -97,7 +97,7 @@ const Projects = ({
               </AspectRatio.Root>
               <div className="projects__item-info">
                 <div className="project_title">
-                  <h4>{project.title}</h4>
+                  <h4>{language === "en" ? project.title : project.titulo}</h4>
                 </div>
                 <div className="badges">
                   {project.core.map((coreItem, idx) => (

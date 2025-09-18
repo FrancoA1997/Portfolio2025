@@ -49,14 +49,19 @@ const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
         {!isLoading && project !== null ? (
           <>
             <div className="actions">
-              <a target="__blank" href={project.url} rel="noopener noreferrer" className="actions-item">
+              <a
+                target="__blank"
+                href={project.url}
+                rel="noopener noreferrer"
+                className="actions-item"
+              >
                 <p className="actions-item-text">
                   {language === "en" ? "Deploy" : "Despliegue"}
                 </p>
                 <RocketIcon className="actions-item-icon" />
               </a>
             </div>
-            <h3>{project.title}</h3>
+            <h3>{language === "en" ? project.title : project.titulo}</h3>
             <div
               className="info-container fade-in-animation"
               data-aos="fade-in"
@@ -84,14 +89,19 @@ const ProjectModal = ({ setOpenModal, projectId, modalArray }) => {
                     ))}
                   </div>
                 </div>
-                  <div className="actions-mobile">
-              <a target="__blank" href={project.url} rel="noopener noreferrer" className="actions-mobile-item">
-                <p className="actions-mobile-item-text">
-                  {language === "en" ? "Deploy" : "Despliegue"}
-                </p>
-                <RocketIcon className="actions-mobile-item-icon" />
-              </a>
-            </div>
+                <div className="actions-mobile">
+                  <a
+                    target="__blank"
+                    href={project.url}
+                    rel="noopener noreferrer"
+                    className="actions-mobile-item"
+                  >
+                    <p className="actions-mobile-item-text">
+                      {language === "en" ? "Deploy" : "Despliegue"}
+                    </p>
+                    <RocketIcon className="actions-mobile-item-icon" />
+                  </a>
+                </div>
               </div>
               <div className="thumbnail">
                 <img src={project.thumbnail} alt="" />

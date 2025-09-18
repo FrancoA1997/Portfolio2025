@@ -4,6 +4,7 @@ import lexlogos from "/images/lexlogos.png";
 import solmedicam from "/images/solmedicam.png";
 import frutales from "/images/frutales.png";
 import vivero from "/images/vivero.png";
+import nico from "/images/nico.png";
 
 ///---------------------Templates---------------------------/////
 
@@ -18,6 +19,7 @@ export const projects = [
   {
     id: 1,
     title: "Destiny Website",
+    titulo: "Sitio Web - Destiny",
 
     description: (
       <p>
@@ -96,6 +98,7 @@ export const projects = [
   {
     id: 2,
     title: "Lexlogos Website",
+    titulo: "Sitio Web - Lexlogos",
 
     description: (
       <p>
@@ -189,6 +192,7 @@ export const projects = [
   {
     id: 3,
     title: "Solmedicam Website",
+    titulo: "Sitio Web - Solmedicam",
 
     descripcion: (
       <p>
@@ -259,8 +263,88 @@ export const projects = [
     url: "https://solmedicam.com/",
   },
   {
+    id: 12,
+    title: "Nico Marban Trainer Website",
+    titulo: "Sitio Web - Nico Marban Trainer",
+
+    description: (
+      <p>
+        I designed and built the website for a personal trainer. <br />
+        <br />
+        My core focus was on creating a seamless, high-performance user
+        experience, ensuring the site was fully responsive and optimized for
+        search engines, making it a powerful tool for the company's digital
+        presence.
+      </p>
+    ),
+    responsabilities: [
+      <p>
+        <strong>Frontend Development:</strong> Built the website from the ground
+        up using React.
+      </p>,
+      <p>
+        <strong>Responsive Design and Adaptability:</strong> Ensured the user
+        interface looked and functioned perfectly across all devices, from
+        mobile phones to desktops.
+      </p>,
+      <p>
+        <strong>Performance Optimization and SEO:</strong> Improved site loading
+        speeds and visibility on search engines.
+      </p>,
+      <p>
+        Present the training plans with an attractive design, using impactful
+        images or short videos that show the results.
+      </p>,
+      <p>
+        Highlight how the app optimizes user interaction and offers exclusive
+        tools that drive conversion.
+      </p>,
+    ],
+    descripcion: (
+      <p>
+        Diseñé y desarrollé la página web para una fábrica de software.
+        <br />
+        <br />
+        Mi enfoque principal fue crear una experiencia de usuario fluida y de
+        alto rendimiento, asegurándome de que el sitio fuera completamente
+        responsive y estuviera optimizado para los motores de búsqueda, lo que
+        lo convirtió en una poderosa herramienta para la presencia digital de la
+        empresa.
+      </p>
+    ),
+    responsabilidades: [
+      <p>
+        <strong>Desarrollo Frontend:</strong> Creación del sitio web desde cero
+        utilizando React.
+      </p>,
+      <p>
+        <strong>Diseño Responsive y Adaptabilidad:</strong> Aseguré que la
+        interfaz de usuario se viera y funcionara perfectamente en cualquier
+        dispositivo, desde móviles hasta ordenadores de escritorio.
+      </p>,
+      <p>
+        <strong>Optimización del rendimiento y SEO:</strong> Mejoré la velocidad
+        de carga y la visibilidad en los motores de búsqueda.
+      </p>,
+      <p>
+        Presentar los planes de entrenamiento con un diseño atractivo,
+        utilizando imágenes impactantes o videos cortos que muestren los
+        resultados.
+      </p>,
+      <p>
+        Resaltar cómo la aplicación optimiza la interacción del usuario y ofrece
+        herramientas exclusivas que impulsan la conversión.
+      </p>,
+    ],
+    stack: ["react", "vite", "scss", "material", "figma", "javascript"],
+    core: ["design", "frontend", "optimization"],
+    thumbnail: nico,
+    url: "https://www.nicomarban.com/",
+  },
+  {
     id: 4,
     title: "Frutales Website",
+    titulo: "Sitio Web - Frutales",
     descripcion: (
       <p>
         Como parte de un equipo de desarrollo, fui responsable del desarrollo
@@ -311,6 +395,7 @@ export const projects = [
   {
     id: 5,
     title: "Vivero Santa Isabel Website",
+    titulo: "Sitio Web - Vivero Santa Isabel",
     descripcion: (
       <p>
         Como parte de un equipo de desarrollo, fui responsable del desarrollo
@@ -388,6 +473,7 @@ export const templates = [
   {
     id: 6,
     title: "Architect Template",
+    titulo: "Plantilla Arquitectura",
 
     descripcion: (
       <p>
@@ -471,6 +557,8 @@ export const templates = [
   {
     id: 7,
     title: "Construction Template",
+    titulo: "Plantilla Constructora",
+
     descripcion: (
       <p>
         Diseñé y desarrollé un sitio web multi-pagina para empresas de
@@ -546,6 +634,8 @@ export const templates = [
   {
     id: 8,
     title: "Psychologist Template",
+    titulo: "Plantilla Psicologos",
+
     descripcion: (
       <p>
         Diseñé y desarrollé una plantilla web para psicólogos, brindándoles una
@@ -627,6 +717,8 @@ export const templates = [
   {
     id: 9,
     title: "Medical Template",
+    titulo: "Plantilla Medicos",
+
     descripcion: (
       <p>
         Diseñé y desarrollé una plantilla web para médicos, brindándoles una
@@ -711,6 +803,8 @@ export const templates = [
   {
     id: 10,
     title: "Lawyer Template",
+    titulo: "Plantilla Abogados",
+
     descripcion: (
       <p>
         Diseñé y desarrollé una plantilla web para abogados, proporcionándoles
@@ -794,6 +888,7 @@ export const templates = [
   {
     id: 11,
     title: "Hotel Template",
+    titulo: "Plantilla Hoteleria",
     descripcion: (
       <p>
         Diseñé y desarrollé un sitio web multi pagina para hoteles, ofreciendo
