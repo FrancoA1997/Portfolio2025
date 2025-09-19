@@ -164,6 +164,7 @@
   .projects {
     padding: 0 1em 1em 1em;
     &__container {
+      padding: 0;
       h2 {
         font-size: 1.6em;
         color: var(--text-primary);
